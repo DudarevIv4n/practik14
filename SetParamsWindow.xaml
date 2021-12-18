@@ -1,0 +1,17 @@
+﻿<Window x:Class="Практическая_14.SetParamsWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Практическая_14"
+        mc:Ignorable="d"
+        Title="Настройки" Height="153" Width="299" Icon="1490129345-rounded11_82205.ico" ResizeMode="NoResize">
+    <Grid>
+        <TextBox x:Name="rowcount"  HorizontalAlignment="Left" Height="23" Margin="148,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="columncount" HorizontalAlignment="Left" Height="23" Margin="148,54,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Label Content="Количество строк:" HorizontalAlignment="Left" Margin="10,20,0,0" VerticalAlignment="Top"/>
+        <Label Content="Количество колонок:" HorizontalAlignment="Left" Margin="10,51,0,0" VerticalAlignment="Top"/>
+        <Button Content="Подтвердить" HorizontalAlignment="Left" Margin="148,92,0,0" VerticalAlignment="Top" Width="120" Click="Save_Click"/>
+
+    </Grid>
+</Window>

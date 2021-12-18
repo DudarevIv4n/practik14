@@ -1,0 +1,72 @@
+﻿<Window x:Name="loade" x:Class="Практическая_14.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Практическая_14"
+        mc:Ignorable="d"
+       Title="Практическая 14. Вариант 4." Height="485" Width="400" MinHeight="485" MinWidth="400" Icon="C:\Users\User\source\repos\Практическая 14\iconfindermercedeslogo4140438-115958_115923.ico" Loaded="Loade_Loaded" WindowStartupLocation="CenterScreen">
+    <Window.ContextMenu>
+        <ContextMenu>
+            <MenuItem Header="Настройки" Click="SetParams_Click"/>
+            <MenuItem Header="Выход" Click="Exit_Click"/>
+        </ContextMenu>
+    </Window.ContextMenu>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="25"/>
+            <RowDefinition />
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="25"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Menu VerticalAlignment="Top" Grid.Row="0" Grid.ColumnSpan="2">
+            <MenuItem Header="Файл" Height="20">
+                <MenuItem Header="Настройки" Click="SetParams_Click"/>
+                <Separator/>
+                <MenuItem Header="Выход" Click="Exit_Click"/>
+            </MenuItem>
+            <MenuItem Header="Справка" Click="GetInformation_Click"/>
+        </Menu>
+        <ToolBar Grid.Row="1"  Grid.ColumnSpan="2">
+            <Button Content="Открыть" Click="OpenArray_Click" />
+            <Separator/>
+            <Button Content="Сохранить" Click="SaveArray_Click"  />
+            <Separator/>
+            <Button Content="Очистить" Click="ClearArray_Click" />
+        </ToolBar>
+        <DataGrid x:Name="datagrid"  Grid.Row="2" SelectedCellsChanged="DataGrid_SelectedCellsChanged"/>
+        <GroupBox Header="Количство уникальных столбцов." Grid.Row="2" Grid.Column="2">
+            <Grid>
+                <TextBox x:Name="result"  HorizontalAlignment="Left" Height="23" Margin="10,38,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="167" IsReadOnly="True"/>
+                <Button Content="Найти" ToolTip="Количество столбцов матрицы с различными элемнтами" HorizontalAlignment="Left" Margin="10,68,0,0" VerticalAlignment="Top" Width="167" Click="Define_Click"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Ввод необходимых значений." Grid.Row="3" Grid.ColumnSpan="2">
+            <Grid>
+                <Label Content="Количество строк:" HorizontalAlignment="Left" Margin="15,20,0,0" VerticalAlignment="Top"/>
+                <Label Content="Количество колонок:" HorizontalAlignment="Left" Margin="15,66,0,0" VerticalAlignment="Top"/>
+                <TextBox x:Name="rowcount" HorizontalAlignment="Left" Height="23" Margin="159,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="211" TextChanged="Rowcount_TextChanged" />
+                <TextBox x:Name="columncount" HorizontalAlignment="Left" Height="23" Margin="159,69,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="211" RenderTransformOrigin="0.695,1.522" TextChanged="Columncount_TextChanged"/>
+            </Grid>
+        </GroupBox>
+        <GroupBox Header="Управление таблицей." Grid.Row="4" Grid.ColumnSpan="2">
+            <Grid>
+                <Button Content="Создать" HorizontalAlignment="Left" Margin="10,25,0,0" VerticalAlignment="Top" Width="360" Click="CreateTable_Click" />
+                <Button Content="Заполнить" HorizontalAlignment="Left" Margin="10,62,0,0" VerticalAlignment="Top" Width="360" Click="CompleteTable_Click" />
+            </Grid>
+        </GroupBox>
+        <StatusBar VerticalAlignment="Bottom"  Grid.Row="5" Grid.ColumnSpan="2">
+            <TextBox x:Name="exercize" Text="Практическая 13" IsReadOnly="True"/>
+            <Separator></Separator>
+            <TextBox x:Name="size" Text="Размер таблицы: 0х0" IsReadOnly="True"/>
+            <Separator></Separator>
+            <TextBox x:Name="selectedsell"  Text="Выбранная ячейка: 0х0" IsReadOnly="True"/>
+        </StatusBar>
+    </Grid>
+</Window>
